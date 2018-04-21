@@ -1,0 +1,14 @@
+markers_asia = [   
+   {
+	 "name": "Taiwan",
+	 "url": "https://en.wikipedia.org/wiki/Taiwan",
+	 "lat": 23.697810,
+	 "lng": 120.960515
+   },
+   {
+	 "name": "Japan",
+	 "url": "https://en.wikipedia.org/wiki/Japan",
+	 "lat": 36.204824,
+	 "lng": 138.252924
+   }
+];

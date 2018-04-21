@@ -6,11 +6,12 @@
 	  zoom: 2
 	})
 
-	L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	streetmap = L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 	  subdomains: ['a', 'b', 'c']
-	}).addTo( map )
+	});
 
+	map.addLayer(streetmap);
 	var myURL = jQuery( 'script[src$="leaf-demo.js"]' ).attr( 'src' ).replace( 'leaf-demo.js', '' )
 
 	var myIcon = L.icon({
@@ -21,9 +22,34 @@
 	  popupAnchor: [0, -14]
 	})
 
-	for ( var i=0; i < markers.length; ++i )
-	{
-	 L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
-	  .bindPopup( '<a href="' + markers[i].url + '" target="_blank">' + markers[i].name + '</a>' )
-	  .addTo( map );
-	}
+	markersObjs = [markers_sur_america, markers_norte_america, markers_europa, markers_africa, markers_asia]
+	var lyrs = [];
+	markersObjs.forEach(function(mrkrs){
+		var markersArray = [];
+		for ( var i=0; i < mrkrs.length; ++i )
+		{
+		  marker = L.marker( [mrkrs[i].lat, mrkrs[i].lng], {icon: myIcon} )
+		   .bindPopup( '<a href="' + mrkrs[i].url + '" target="_blank">' + mrkrs[i].name + '</a>' );
+		   markersArray.push(marker);
+		}
+		lyrGroup = L.layerGroup(markersArray);
+		map.addLayer(lyrGroup);
+		lyrs.push(lyrGroup);
+	});
+	
+	var baseMaps = {		
+		"OpenStreetMap": streetmap
+	};
+
+	var overlayMaps = {
+		"Sur America": lyrs[0],
+		"Norte America": lyrs[1],
+		"Europa": lyrs[2],
+		"Africa": lyrs[3],
+		"Asia": lyrs[4],
+	};
+	
+	L.control.layers(baseMaps, overlayMaps).addTo(map);
+	
+	
+	

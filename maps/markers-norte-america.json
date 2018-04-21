@@ -1,0 +1,14 @@
+markers_norte_america = [
+   {
+	 "name": "Canada",
+	 "url": "https://en.wikipedia.org/wiki/Canada",
+	 "lat": 56.130366,
+	 "lng": -106.346771
+   },
+   {
+	 "name": "United States",
+	 "url": "https://en.wikipedia.org/wiki/United_States",
+	 "lat": 37.090240,
+	 "lng": -95.712891
+   }
+];

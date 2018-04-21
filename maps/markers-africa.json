@@ -1,0 +1,14 @@
+markers_africa = [   
+   {
+	 "name": "South Africa",
+	 "url": "https://en.wikipedia.org/wiki/South_Africa",
+	 "lat": -30.559482,
+	 "lng": 22.937506
+   },
+   {
+	 "name": "Madagascar",
+	 "url": "https://en.wikipedia.org/wiki/Madagascar",
+	 "lat": -18.766947,
+	 "lng": 46.869107
+   }
+];

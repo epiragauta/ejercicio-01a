@@ -1,0 +1,14 @@
+markers_sur_america = [
+   {
+	 "name": "Anguilla",
+	 "url": "https://en.wikipedia.org/wiki/Anguilla",
+	 "lat": 18.220554,
+	 "lng": -63.068615
+   },
+   {
+	 "name": "Barbados",
+	 "url": "https://en.wikipedia.org/wiki/Barbados",
+	 "lat": 13.193887,
+	 "lng": -59.543198
+   }
+];
